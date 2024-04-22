@@ -1,0 +1,117 @@
+@import "../core.scss";
+
+.works-hero {
+  padding: 200px 0 100px;
+
+  @include minw($tablet) {
+    padding: 175px 0 60px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+  &__col {
+    padding: 0 15px;
+    &:last-child {
+      flex: 0 0 67%;
+    }
+  }
+  &__title {
+    position: relative;
+    &::before {
+      content: "";
+      width: 110%;
+      height: 110%;
+      background-image: url("../images/work-lines.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__list {
+    font-weight: 600;
+    @include minw($sm-pc) {
+      font-size: 54px;
+    }
+  }
+  &__item {
+    position: relative;
+    line-height: 1.296em;
+    padding-left: 70px;
+
+    &:first-child {
+      &:before {
+        transform: rotate(-45deg) translate(0, -50%);
+      }
+    }
+    &:last-child {
+      &:before {
+        transform: rotate(45deg) translate(0, -50%);
+      }
+    }
+    &::before {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../images/arrow-orange.svg");
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform-origin: top;
+      transform: translate(0, -50%);
+    }
+    &:not(:last-child) {
+      @include minw($sm-pc) {
+        margin-bottom: 48px;
+      }
+    }
+  }
+}
+
+.case {
+  padding-top: 33px;
+  &-category {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+      @include minw($sm-pc) {
+        margin-bottom: 70px;
+      }
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 35px;
+      svg {
+        fill: $black-800;
+        width: 30px;
+        margin-right: 20px;
+        @include minw($sm-pc) {
+          width: 40px;
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+  &-card {
+    display: block;
+    position: relative;
+    &__title {
+      color: $white;
+      position: absolute;
+      font-weight: 500;
+      top: 16px;
+      left: 16px;
+      width: 100%;
+      font-size: 16px;
+      line-height: 1.125em;
+    }
+  }
+}

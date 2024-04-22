@@ -1,0 +1,151 @@
+@import "../core.scss";
+
+.wwa-hero {
+  padding: 120px 0 100px;
+
+  @include minw($tablet) {
+    padding: 200px 0 50px;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+    @include minw($tablet) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__col {
+    padding: 0 15px;
+    flex: 0 0 100%;
+    @include minw($tablet) {
+      flex: 0 0 auto;
+    }
+    &:last-child {
+      @include minw($tablet) {
+        flex: 0 0 70%;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    &::before {
+      content: "";
+      width: 110%;
+      height: 110%;
+      background-image: url("../images/wwa-lines.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    h1 {
+      line-height: 0.791em;
+    }
+  }
+  &__content {
+    margin: 60px 0;
+    @include minw($tablet) {
+      margin: 108px 100px 80px 0;
+    }
+    h2 {
+      margin-bottom: 32px;
+      letter-spacing: 0;
+      line-height: 1.296em;
+      font-size: 32px;
+      @include minw($tablet) {
+        font-size: 38px;
+      }
+      @include minw($sm-pc) {
+        font-size: 44px;
+      }
+      @include minw($pc) {
+        font-size: 54px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.625em;
+      @include minw($sm-tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__text {
+    position: relative;
+    max-width: 790px;
+    padding-left: 60px;
+    &::before {
+      content: "";
+      width: 30ex;
+      height: 30px;
+      position: absolute;
+      top: 20px;
+      left: -30px;
+      background-image: url("../images/arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: rotate(45deg);
+    }
+    p {
+      font-size: 12px;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.about {
+  @include minw($tablet) {
+    padding: 0 20px 16px 0;
+  }
+  &__row {
+    margin: 0 -5px;
+    @include minw($lg-mob) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &__col {
+    padding: 0 5px;
+    margin-bottom: 10px;
+    min-height: 450px;
+    display: flex;
+    @include minw($lg-mob) {
+      flex: 0 0 50%;
+    }
+    @include minw($pc) {
+      flex: 0 0 25%;
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(2) {
+      order: -1;
+    }
+  }
+  &-text {
+    padding: 32px 46px 32px 32px;
+    border: 1px solid $black;
+    min-height: 100%;
+
+    h3 {
+      color: $primary;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.714em;
+    }
+  }
+  &-image {
+    min-height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

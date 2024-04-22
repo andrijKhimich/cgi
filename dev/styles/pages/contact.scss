@@ -1,0 +1,165 @@
+@import "../core.scss";
+
+.page-template-page-contact {
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include minw($sm-tablet) {
+      display: block;
+    }
+  }
+  .contact {
+    order: 2;
+    padding-top: 60px;
+    @include minw($sm-tablet) {
+      padding: 0 0 60px 0;
+    }
+  }
+}
+.contact {
+  @include minw($pc) {
+    padding: 50px 0;
+  }
+  &-hero {
+    padding: 110px 0 32px;
+
+    @include minw($tablet) {
+      padding: 175px 0 60px;
+    }
+    &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 -15px;
+    }
+    &__col {
+      padding: 0 15px;
+      flex: 0 0 100%;
+      &:last-child {
+        @include minw($tablet) {
+          flex: 0 0 67%;
+        }
+      }
+    }
+    &__title {
+      position: relative;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      @include minw($tablet) {
+        text-align: left;
+        max-width: 100%;
+        margin: 0;
+      }
+      &::before {
+        @include minw($tablet) {
+          // content: "";
+          // width: 110%;
+          // height: 110%;
+          // background-image: url("../images/work-lines.svg");
+          // background-size: contain;
+          // background-repeat: no-repeat;
+          // position: absolute;
+          // top: 60%;
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  &__row {
+    @include minw($sm-tablet) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &-card {
+    padding: 16px 16px 120px 16px;
+    text-transform: uppercase;
+    position: relative;
+    border: 1px solid $black;
+    &:not(:last-child) {
+      border-bottom: none;
+      @include minw($sm-tablet) {
+        border-bottom: 1px solid $black;
+        border-left: 1px solid $black;
+        border-right: none;
+      }
+    }
+    background-color: $white;
+    transition:
+      color $hover,
+      background-color $hover;
+    &:hover {
+      color: $white;
+      background-color: $black;
+      svg {
+        fill: #808080;
+      }
+    }
+    @include minw($sm-tablet) {
+      flex: 0 0 33.333%;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+    }
+    @include minw($tablet) {
+      padding: 16px 24px 120px 24px;
+      background-color: transparent;
+    }
+    &__title {
+      font-size: 10px;
+      line-height: 1.5em;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    &__content {
+      font-weight: 300;
+      font-size: 13px;
+      p {
+        line-height: 1.153em;
+      }
+    }
+    &__footer {
+      font-size: 12px;
+      margin-bottom: 0;
+      font-weight: 300;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      @include minw($tablet) {
+        bottom: 24px;
+      }
+      a {
+        margin-right: 15px;
+      }
+      p,
+      a {
+        line-height: 1.3em;
+      }
+    }
+    &__time {
+      display: flex;
+      align-items: center;
+      color: #787878;
+      p {
+        margin-left: 4px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      svg {
+        fill: #787878;
+        width: 14px;
+        transition: fill $hover;
+      }
+    }
+  }
+  &-banner {
+    @include minw($tablet) {
+      padding: 0 0 60px 0;
+    }
+  }
+}

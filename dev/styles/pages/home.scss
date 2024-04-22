@@ -1,0 +1,462 @@
+@import "../core.scss";
+
+.hero {
+  padding-top: 110px;
+  padding-bottom: 50px;
+  @include minw($tablet) {
+    // padding-top: 110px;
+  }
+  &__title {
+    text-align: center;
+    @include minw($tablet) {
+      text-align: left;
+    }
+  }
+}
+.awards {
+  background-color: $black-800;
+  padding: 20px 0;
+  @include minw($sm-tablet) {
+    padding: 40px 0;
+  }
+  @include minw($tablet) {
+    padding: 64px 0;
+  }
+  &__title {
+    text-align: center;
+    color: $white;
+    h2,
+    h3,
+    h4,
+    h5 {
+      letter-spacing: 0.03em;
+    }
+    @include minw($tablet) {
+      color: $grey-200;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: 88px;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 32px;
+    margin: 0 -5px;
+    @include minw($sm-tablet) {
+      margin: 0 -15px;
+    }
+    &__item {
+      padding: 5px;
+      height: 128px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 33.333%;
+      @include minw($sm-tablet) {
+        flex: 0 0 33.333%;
+        padding: 15px;
+      }
+      @include minw($tablet) {
+        flex: 0 0 25%;
+      }
+      &:first-child,
+      &:nth-child(2) {
+        @include minw($tablet) {
+          flex: 0 0 50%;
+        }
+      }
+      &:first-child {
+        img {
+          @include minw($tablet) {
+            margin-right: auto;
+            margin-left: 0;
+          }
+        }
+      }
+      &:nth-child(2) {
+        img {
+          @include minw($tablet) {
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
+      }
+      img {
+        max-width: 128px;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
+.clients {
+  padding: 20px 0 8px;
+  background-color: $black-800;
+  position: relative;
+  color: $white;
+  @include minw($sm-tablet) {
+    padding: 40px 0 8px;
+  }
+  @include minw($tablet) {
+    padding: 64px 0 32px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("../images/ellipse.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include minw($tablet) {
+      width: 1160px;
+      height: 864px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: $white;
+    position: relative;
+    h2,
+    h3,
+    h4,
+    h5 {
+      letter-spacing: 0.03em;
+    }
+    &_hidden {
+      display: none;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -5px;
+    position: relative;
+    @include minw($tablet) {
+      margin: 0 -15px;
+    }
+    &__item {
+      padding: 5px;
+      height: 128px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 33.333%;
+      @include minw($tablet) {
+        padding: 15px;
+        margin-bottom: 32px;
+      }
+      &:nth-child(3n) {
+        img {
+          margin-right: 0;
+          margin-left: auto;
+        }
+      }
+      &:nth-child(3n + 1) {
+        img {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+
+      img {
+        max-width: 128px;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
+
+.work {
+  &-card {
+    display: block;
+    margin-bottom: 30px;
+    @include minw($tablet) {
+      margin-bottom: 0;
+    }
+    &:not(:last-child) {
+      @include minw($tablet) {
+        margin-bottom: 40px;
+      }
+      @include minw($sm-pc) {
+        margin-bottom: 54px;
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 16px;
+      @include minw($tablet) {
+        margin-bottom: 22px;
+      }
+      svg {
+        fill: $black;
+        width: 23px;
+        height: 18px;
+        margin-right: 40px;
+        @include minw($tablet) {
+          margin-right: 60px;
+          height: 30px;
+          width: 40px;
+        }
+        @include minw($sm-pc) {
+          margin-right: 80px;
+        }
+      }
+    }
+    &__media {
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 40%;
+      position: relative;
+      img {
+        position: absolute;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.mission {
+  border-left: 1px solid $black;
+  border-right: 1px solid $black;
+  padding: 40px 15px;
+  @include minw($tablet) {
+    padding: 60px 15px;
+  }
+  @include minw($pc) {
+    padding: 94px 15px 94px 8%;
+  }
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__col {
+    padding: 0 15px;
+    flex: 0 0 100%;
+    @include minw($tablet) {
+      flex: 0 0 auto;
+    }
+    &:nth-child(2) {
+      @include minw($tablet) {
+        flex: 0 0 64%;
+      }
+    }
+  }
+  &__sidebar {
+    font-size: 14px;
+    line-height: 1.571em;
+    color: $grey-300;
+    margin-bottom: 32px;
+    @include minw($tablet) {
+      max-width: 225px;
+      margin-bottom: 0;
+    }
+  }
+  &__content {
+    font-size: 23px;
+    font-weight: 600;
+    @include minw($tablet) {
+      margin-right: 15px;
+    }
+    @include minw($sm-pc) {
+      font-size: 30px;
+    }
+    @include minw($pc) {
+      margin-right: 30px;
+      font-size: 36px;
+    }
+    @include minw($full-hd) {
+      font-size: 45px;
+      margin-right: 45px;
+    }
+    p {
+      line-height: 1.222em;
+    }
+  }
+}
+
+.circle {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  padding-bottom: 50%;
+  @include minw($lg-mob) {
+    padding-bottom: 30%;
+  }
+  @include minw($sm-tablet) {
+    padding-bottom: 25%;
+  }
+  @include minw($tablet) {
+    width: 100%;
+    padding-bottom: 66%;
+  }
+  text {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+  }
+  &__arrow {
+    position: absolute;
+    top: 43%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    fill: $primary;
+    width: 22px;
+    height: 16px;
+  }
+  &__text {
+    position: absolute;
+    left: -20%;
+    top: -45%;
+    width: 100%;
+    height: 170%;
+    animation-name: rotate;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+.vision {
+  border-left: 1px solid $black;
+  border-right: 1px solid $black;
+  border-top: 1px solid $black;
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include minw($lg-mob) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__col {
+    padding: 0 15px;
+    flex: 0 0 100%;
+    @include minw($lg-mob) {
+      flex: 0 1 auto;
+    }
+    &:first-child {
+      @include minw($lg-mob) {
+        flex: 0 0 30%;
+      }
+      @include minw($sm-tablet) {
+        flex: 0 0 40%;
+      }
+
+      @include minw($tablet) {
+        flex: 0 0 26%;
+      }
+    }
+  }
+  &__sidebar {
+    font-size: 14px;
+    line-height: 1.571em;
+    color: $grey-300;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-right: 1px solid $black;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    p {
+      color: $black;
+      letter-spacing: 0.6em;
+      font-weight: 500;
+      font-size: 20px;
+      z-index: 1;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__content {
+    font-size: 23px;
+    font-weight: 300;
+    padding: 60px 15px;
+
+    @include minw($tablet) {
+      padding: 60px 60px 30px 60px;
+    }
+    @include minw($sm-pc) {
+      font-size: 30px;
+    }
+    @include minw($pc) {
+      font-size: 36px;
+      padding: 95px 120px 60px 106px;
+    }
+    @include minw($full-hd) {
+      font-size: 45px;
+    }
+    strong {
+      font-weight: 600;
+    }
+    p {
+      line-height: 1.222em;
+    }
+  }
+  &__footer {
+    font-size: 14px;
+    max-width: 340px;
+    margin: 32px 10px 0 auto;
+    position: relative;
+    color: $grey-300;
+    p {
+      line-height: 1.571em;
+    }
+    &::before {
+      @include minw($sm-tablet) {
+        content: "";
+        width: 125%;
+        height: 64px;
+        background-image: url("../images/vision-lines.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 45%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

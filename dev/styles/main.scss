@@ -1,0 +1,22 @@
+// @import './core.scss';
+@import "utils/fonts";
+
+@import "base/base";
+@import "base/typography";
+@import "modules/buttons";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/form";
+@import "modules/popup";
+@import "pages/home";
+@import "pages/works";
+@import "pages/who-we-are";
+@import "pages/contact";
+
+.otgs-development-site-front-end {
+	display: none;
+}
+
+#wpadminbar {
+	display: none;
+}
