@@ -44,33 +44,35 @@ get_header(); ?>
           </svg>
           <?php echo esc_html($term->name); ?>
         </div>
-        <?php
-        $args = array(
-          'post_type' => 'cases',
-          'posts_per_page' => -1,
-          'tax_query' => array(
-            array(
-              'taxonomy' => $taxonomy,
-              'field' => 'id',
-              'terms' => $term->term_id
+        <div class="case-category__row">
+          <?php
+          $args = array(
+            'post_type' => 'cases',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+              array(
+                'taxonomy' => $taxonomy,
+                'field' => 'id',
+                'terms' => $term->term_id
+              )
             )
-          )
-        );
-        $query = new WP_Query($args);
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post(); ?>
-            <?php $poster = get_field('case-poster_image');
-            if ($poster) : ?>
-              <a class="case-card" href="<?php echo esc_url(get_term_link($term)); ?>">
-                <p class="case-card__title"><?php the_title() ?></p>
-                <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>">
-              </a>
-            <?php endif; ?>
-        <?php endwhile;
-        else :
-          echo '<li>No posts found.</li>';
-        endif;
-        wp_reset_postdata(); ?>
+          );
+          $query = new WP_Query($args);
+          if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post(); ?>
+              <?php $poster = get_field('case-poster_image');
+              if ($poster) : ?>
+                <a class="case-card" href="<?php the_permalink(); ?>">
+                  <p class="case-card__title"><?php the_title() ?></p>
+                  <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>">
+                </a>
+              <?php endif; ?>
+          <?php endwhile;
+          else :
+            echo '<li>No posts found.</li>';
+          endif;
+          wp_reset_postdata(); ?>
+        </div>
       </div>
   <?php endforeach;
   endif; ?>

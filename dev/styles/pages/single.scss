@@ -1,0 +1,75 @@
+@import "../core.scss";
+
+.single {
+  background-color: $black;
+  .main-wrapper {
+    padding: 0;
+    @include minw($tablet) {
+      padding: 0 0 0 60px;
+    }
+  }
+  .header-social {
+    border-color: $white;
+    &::before {
+      display: none;
+    }
+  }
+  .header-social__list {
+    border-color: $white;
+  }
+  .header-social__link {
+    fill: $white;
+  }
+  &-banner {
+    padding: 28% 0 12%;
+    color: $white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin: 15px 15px 0;
+    @include minw($tablet) {
+      // padding: 200px 0 50px;
+      margin: 0;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba($black, 0.5);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  &__category {
+    font-size: 14px;
+    line-height: 1.142em;
+    position: relative;
+    padding-left: 33px;
+    font-weight: 500;
+    margin-bottom: 19px;
+    @include minw($tablet) {
+      font-size: 16px;
+    }
+    @include minw($lg) {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    @include minw($full-hd) {
+      font-size: 21px;
+      margin-bottom: 50px;
+    }
+    span {
+      color: $primary;
+      font-size: 45px;
+      font-weight: 500;
+      position: absolute;
+      top: 3px;
+      left: 2px;
+    }
+  }
+}

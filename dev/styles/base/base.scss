@@ -26,6 +26,7 @@ body {
 	color: $black;
 	background-color: #fff;
 	font-size: 14px;
+	overflow-x: hidden;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -44,26 +45,26 @@ body {
 }
 
 // custom scrollbar
-// /* width */
-// ::-webkit-scrollbar {
-//   width: 8px;
-// }
+/* width */
+::-webkit-scrollbar {
+	width: 2px;
+}
 
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: #444;
-// }
+/* Track */
+::-webkit-scrollbar-track {
+	background: #444;
+}
 
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: #666;
-//   border-radius: 3px;
-// }
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 3px;
+}
 
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #555;
-// }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 
 h1,
 h2,
@@ -78,7 +79,7 @@ h6 {
 
 h1 {
 	line-height: 1.166em;
-	font-size: 50px;
+	font-size: 43px;
 	font-weight: 600;
 	letter-spacing: -0.03em;
 	@include minw($tablet) {

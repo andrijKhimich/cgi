@@ -1,7 +1,7 @@
 @import "../core.scss";
 
 .works-hero {
-  padding: 200px 0 100px;
+  padding: 130px 0 50px;
 
   @include minw($tablet) {
     padding: 175px 0 60px;
@@ -11,15 +11,28 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 -15px;
+    flex-wrap: wrap;
   }
   &__col {
     padding: 0 15px;
-    &:last-child {
-      flex: 0 0 67%;
+    flex: 0 0 100%;
+    @include minw($sm-tablet) {
+      &:first-child {
+        flex: 0 0 33%;
+      }
+      &:last-child {
+        flex: 0 0 67%;
+      }
     }
   }
   &__title {
     position: relative;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    @include minw($sm-tablet) {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
     &::before {
       content: "";
       width: 110%;
@@ -29,21 +42,43 @@
       background-repeat: no-repeat;
       position: absolute;
       top: 60%;
-      left: 50%;
+      left: 53%;
       transform: translate(-50%, -50%);
+      @include minw($sm-tablet) {
+        left: 50%;
+      }
     }
   }
   &__list {
     font-weight: 600;
-    @include minw($sm-pc) {
+    font-size: 28px;
+    @include minw($mob) {
+      font-size: 32px;
+    }
+    @include minw($lg-mob) {
+      font-size: 36px;
+    }
+    @include minw($pc) {
+      font-size: 44px;
+    }
+    @include minw($lg) {
+      font-size: 44px;
+    }
+    @include minw($full-hd) {
       font-size: 54px;
     }
   }
   &__item {
     position: relative;
     line-height: 1.296em;
-    padding-left: 70px;
-
+    padding-left: 80px;
+    color: $primary;
+    text-decoration: underline;
+    @include minw($sm-tablet) {
+      padding-left: 70px;
+      color: $black;
+      text-decoration: none;
+    }
     &:first-child {
       &:before {
         transform: rotate(-45deg) translate(0, -50%);
@@ -56,8 +91,8 @@
     }
     &::before {
       content: "";
-      width: 40px;
-      height: 40px;
+      width: 20px;
+      height: 20px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -67,11 +102,22 @@
       left: 0;
       transform-origin: top;
       transform: translate(0, -50%);
+      @include minw($sm-tablet) {
+        width: 40px;
+        height: 40px;
+      }
     }
     &:not(:last-child) {
-      @include minw($sm-pc) {
+      margin-bottom: 21px;
+      @include minw($full-hd) {
         margin-bottom: 48px;
       }
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    @include minw($sm-tablet) {
+      text-decoration: none;
     }
   }
 }
@@ -99,10 +145,57 @@
         }
       }
     }
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr; /* Setting the height of automatically created rows */
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      grid-auto-flow: dense; /* Arrange items densely within the grid */
+    }
   }
   &-card {
     display: block;
     position: relative;
+    grid-area: auto;
+    &:nth-child(6n + 1) {
+      grid-area: auto / 1 / auto / 2;
+      aspect-ratio: 2/1;
+    }
+    &:nth-child(6n + 2) {
+      grid-area: auto / 2 / span 2 / 3;
+      aspect-ratio: 1/1;
+    }
+    &:nth-child(6n + 3) {
+      grid-area: span 1 / 1 / span 1 / 2;
+      aspect-ratio: 2/1;
+    }
+    &:nth-child(6n + 4) {
+      grid-area: span 2 / 1 / span 3 / 2;
+      aspect-ratio: 1/1;
+    }
+    &:nth-child(6n + 5) {
+      grid-area: span 1 / 2 / span 1 / 3;
+      aspect-ratio: 2/1;
+    }
+    &:nth-child(6n + 6) {
+      grid-area: span 1 / 2 / span 1 / 3;
+      aspect-ratio: 2/1;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 25%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
     &__title {
       color: $white;
       position: absolute;
