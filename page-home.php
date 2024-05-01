@@ -37,7 +37,7 @@ get_header(); ?>
         $query = new WP_Query($args);
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="work-card__media">
+            <div class="work-card__media" data-parallax>
               <?php $poster = get_field('case-poster_image');
               if ($poster) : ?>
                 <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>">
@@ -128,7 +128,7 @@ get_header(); ?>
         <?php
         $image = get_field('vision_image');
         if (!empty($image)) : ?>
-          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <img data-parallax src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
         <?php endif; ?>
         <div class="vision__title">
           <p><?php the_field('vision_title'); ?>

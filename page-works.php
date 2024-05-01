@@ -64,7 +64,7 @@ get_header(); ?>
               if ($poster) : ?>
                 <a class="case-card" href="<?php the_permalink(); ?>">
                   <p class="case-card__title"><?php the_title() ?></p>
-                  <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>">
+                  <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>" data-parallax>
                 </a>
               <?php endif; ?>
           <?php endwhile;

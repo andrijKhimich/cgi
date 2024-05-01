@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const clients = document.querySelectorAll('.clients-list__item');
   const showClientsTitle = () => {
     const clientsTitle = document.querySelector('.clients__title_hidden');
-    console.log(clients.length);
     if (clients.length < 5) {
       clientsTitle.style.display = 'block';
       clientsTitle.style.marginBottom = 32 + 'px';
@@ -68,6 +67,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     updateClock('America/Toronto', 'toronto');
   }
 
+  // new Ukiyo(".ukiyo")
+  const els = document.querySelectorAll("[data-parallax]")
+  if (els.length) {
+    console.log(1);
+    els.forEach((el) => {
+      new Ukiyo(el, {
+        scale: 1.2,
+        speed: 2,
+        willChange: true,
+      })
+    })
+  }
+
+  const lenis = new Lenis()
+
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
 
 
   //   const header = document.querySelector('.header');
