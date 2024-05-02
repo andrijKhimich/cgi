@@ -45,7 +45,7 @@ get_header(); ?>
 <?php endif;
 $image = get_field('contact_image');
 if (!empty($image)) : ?>
-  <section class="section contact-banner" data-parallax>
+  <section class="section contact-banner">
     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
   </section>
 <?php endif;

@@ -276,7 +276,7 @@
   }
   &__content {
     font-size: 23px;
-    font-weight: 600;
+    // font-weight: 600;
     @include minw($tablet) {
       margin-right: 15px;
     }

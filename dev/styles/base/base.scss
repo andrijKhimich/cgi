@@ -80,7 +80,7 @@ h6 {
 h1 {
 	line-height: 1.166em;
 	font-size: 43px;
-	font-weight: 600;
+	// font-weight: 600;
 	letter-spacing: -0.03em;
 	@include minw($tablet) {
 		font-size: 60px;
@@ -89,7 +89,7 @@ h1 {
 		font-size: 80px;
 	}
 	@include minw($pc) {
-		font-size: 90px;
+		// font-size: 90px;
 	}
 	@include minw($full-hd) {
 		font-size: 120px;
