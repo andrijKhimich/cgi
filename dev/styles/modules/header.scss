@@ -161,11 +161,10 @@
     display: none;
     @include minw($tablet) {
       display: block;
-      right: 100px;
       position: absolute;
       padding-top: 60px;
       border-bottom: 1px solid $black;
-      right: 100px;
+      right: 0;
       left: 0;
     }
     @include minw($pc) {

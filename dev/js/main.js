@@ -68,30 +68,61 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // new Ukiyo(".ukiyo")
-  const els = document.querySelectorAll("[data-parallax]")
-  if (els.length) {
-    console.log(1);
-    els.forEach((el) => {
-      new Ukiyo(el, {
-        scale: 1.2,
-        speed: 2,
-        willChange: true,
-      })
-    })
-  }
+  // const els = document.querySelectorAll("[data-parallax]")
+  // const parallax = new Ukiyo(els, {
+  //   scale: 1.2,
+  //   speed: 2,
+  //   willChange: true,
+  // })
+  // window.addEventListener('resize', () => {
+  //   parallax.reset();
+  // });
 
-  const lenis = new Lenis()
 
-  lenis.on('scroll', (e) => {
-    console.log(e)
-  })
+  // const lenis = new Lenis()
+
+  // lenis.on('scroll', (e) => {
+  //   console.log(e)
+  // })
+
+  // function raf(time) {
+  //   lenis.raf(time)
+  //   requestAnimationFrame(raf)
+  // }
+
+  // requestAnimationFrame(raf)
+
+  /**
+   * Ukiyo.js
+   */
+  const parallax = new Ukiyo('[data-parallax]', {
+    externalRAF: true,
+    scale: 1.2,
+    speed: 1.8,
+    willChange: true,
+  });
+  window.addEventListener('resize', () => {
+    parallax.reset();
+  });
+
+  /**
+   * smooth scroll
+   */
+  const lenis = new Lenis({
+    duration: 0.75,
+    smoothWheel: true,
+    smoothTouch: false,
+  });
 
   function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+    parallax.animate();
+
+    lenis.raf(time);
+    requestAnimationFrame(raf);
   }
 
-  requestAnimationFrame(raf)
+  requestAnimationFrame(raf);
+
 
 
   //   const header = document.querySelector('.header');
@@ -103,9 +134,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //   };
 
   //   setWrapperPadding();
-  //   window.addEventListener('resize', () => {
-  //     setWrapperPadding();
-  //   });
+
 
   //   let string = document.querySelectorAll('.wpml-ls-native');
   //   if (string) {

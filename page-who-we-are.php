@@ -37,8 +37,8 @@ get_header(); ?>
     if ($about_gallery) : ?>
       <?php foreach ($about_gallery as $image) : ?>
         <div class="about__col">
-          <div class="about-image" data-parallax>
-            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <div class="about-image">
+            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" data-parallax />
           </div>
         </div>
       <?php endforeach; ?>

@@ -46,7 +46,7 @@ get_header(); ?>
             <?php
             $args = array(
               'post_type' => 'cases',
-              'posts_per_page' => -1,
+              'posts_per_page' => 6,
               'tax_query' => array(
                 array(
                   'taxonomy' => $taxonomy,
@@ -62,7 +62,7 @@ get_header(); ?>
                 if ($poster) : ?>
                   <a class="case-card" href="<?php the_permalink(); ?>">
                     <p class="case-card__title"><?php the_title() ?></p>
-                    <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>" data-parallax>
+                    <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>" data-parallax />
                   </a>
                 <?php endif; ?>
             <?php endwhile;

@@ -37,10 +37,10 @@ get_header(); ?>
         $query = new WP_Query($args);
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="work-card__media" data-parallax>
+            <div class="work-card__media">
               <?php $poster = get_field('case-poster_image');
               if ($poster) : ?>
-                <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>">
+                <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>" data-parallax>
               <?php endif; ?>
             </div>
         <?php endwhile;

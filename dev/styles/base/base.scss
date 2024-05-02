@@ -205,7 +205,7 @@ sup {
 img,
 picture,
 source {
-	max-width: 100%;
+	// max-width: 100%;
 	width: 100%;
 	display: block;
 	border-style: none; // Remove the border on images inside links in IE 10.
@@ -452,7 +452,7 @@ input {
 	margin: 0 auto;
 	padding: 0 15px;
 	@include minw($tablet) {
-		padding: 0 100px;
+		padding: 0 0 0 80px;
 	}
 	@include minw($pc) {
 		padding: 0 10%;
