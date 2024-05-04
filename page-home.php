@@ -16,7 +16,7 @@ get_header(); ?>
   if ($terms) :
     foreach ($terms as $term) : ?>
       <a href="<?php echo esc_url(get_term_link($term)); ?>" class="work-card">
-        <div class="work-card__title title-2">
+        <div class="work-card__title title-2 js-scroll slide-bottom in-view-detect">
           <svg width="42" height="32" viewBox="0 0 42 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.999999 15.4407L37.8706 15.4407L24.5759 2.14604L25.514 1.20798L40.41 16.104L25.514 31L24.5759 30.0619L37.8706 16.7673L0.999999 16.7673L0.999999 15.4407Z" />
           </svg>
@@ -37,7 +37,7 @@ get_header(); ?>
         $query = new WP_Query($args);
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="work-card__media">
+            <div class="work-card__media js-scroll slide-bottom in-view-detect">
               <?php $poster = get_field('case-poster_image');
               if ($poster) : ?>
                 <img src="<?php echo esc_url($poster['url']); ?>" alt="<?php echo esc_attr($poster['alt']); ?>" data-parallax>
@@ -61,7 +61,7 @@ get_header(); ?>
     if ($awards_gallery) : ?>
       <ul class="awards-list">
         <?php foreach ($awards_gallery as $image) : ?>
-          <li class="awards-list__item">
+          <li class="awards-list__item js-scroll slide-top in-view-detect">
             <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
           </li>
         <?php endforeach; ?>
@@ -79,7 +79,7 @@ get_header(); ?>
         <?php
         $total_items = count($awards_gallery);
         foreach ($awards_gallery as $key => $image) : ?>
-          <li class="clients-list__item">
+          <li class="clients-list__item js-scroll slide-top in-view-detect">
             <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
           </li>
           <?php if ($key === 3 && $total_items > 4) : ?>
@@ -92,7 +92,7 @@ get_header(); ?>
     <?php endif; ?>
   </div>
 </section>
-<section class="section mission">
+<section class="section mission js-scroll slide-top in-view-detect">
   <div class="mission__row">
     <div class="mission__col">
       <div class="mission__sidebar">
@@ -121,7 +121,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<section class="section vision">
+<section class="section vision js-scroll slide-top in-view-detect">
   <div class="vision__row">
     <div class="vision__col">
       <div class="vision__sidebar">

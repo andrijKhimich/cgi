@@ -3,7 +3,7 @@
  * Template name: Who we are page
 */
 get_header(); ?>
-<section class="section wwa-hero">
+<section class="section wwa-hero js-scroll slide-top in-view-detect">
   <div class="wwa-hero__row">
     <div class="wwa-hero__col">
       <div class="wwa-hero__title">
@@ -20,7 +20,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<section class="section about">
+<section class="section about js-scroll slide-top in-view-detect">
   <div class="about__row">
     <div class="about__col">
       <div class="about-text">
@@ -53,7 +53,7 @@ get_header(); ?>
     if ($awards_gallery) : ?>
       <ul class="awards-list">
         <?php foreach ($awards_gallery as $image) : ?>
-          <li class="awards-list__item">
+          <li class="awards-list__item js-scroll slide-top in-view-detect">
             <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
           </li>
         <?php endforeach; ?>

@@ -3,7 +3,7 @@
  * Template name: Contact page
 */
 get_header(); ?>
-<section class="section contact-hero">
+<section class="section contact-hero js-scroll slide-bottom in-view-detect">
   <div class="contact-hero__row">
     <div class="contact-hero__col">
       <div class="contact-hero__title">
@@ -13,7 +13,7 @@ get_header(); ?>
   </div>
 </section>
 <?php if (have_rows('contacts')) : ?>
-  <section class="section contact">
+  <section class="section contact js-scroll slide-top in-view-detect">
     <div class="contact__row">
       <?php while (have_rows('contacts')) : the_row();
       ?>
@@ -45,7 +45,7 @@ get_header(); ?>
 <?php endif;
 $image = get_field('contact_image');
 if (!empty($image)) : ?>
-  <section class="section contact-banner">
+  <section class="section contact-banner js-scroll slide-top in-view-detect">
     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
   </section>
 <?php endif;

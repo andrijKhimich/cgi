@@ -1,5 +1,8 @@
 
+// import Highway from '@dogstudio/highway';
+
 document.addEventListener('DOMContentLoaded', (event) => {
+  // Fade
   const toggleMenu = () => {
     const column = document.querySelector('.js-header_col');
     const menu = document.querySelector('.js-header-nav');
@@ -67,34 +70,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     updateClock('America/Toronto', 'toronto');
   }
 
-  // new Ukiyo(".ukiyo")
-  // const els = document.querySelectorAll("[data-parallax]")
-  // const parallax = new Ukiyo(els, {
-  //   scale: 1.2,
-  //   speed: 2,
-  //   willChange: true,
-  // })
-  // window.addEventListener('resize', () => {
-  //   parallax.reset();
-  // });
-
-
-  // const lenis = new Lenis()
-
-  // lenis.on('scroll', (e) => {
-  //   console.log(e)
-  // })
-
-  // function raf(time) {
-  //   lenis.raf(time)
-  //   requestAnimationFrame(raf)
-  // }
-
-  // requestAnimationFrame(raf)
-
-  /**
-   * Ukiyo.js
-   */
   const parallax = new Ukiyo('[data-parallax]', {
     externalRAF: true,
     scale: 1.2,
@@ -122,117 +97,72 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   requestAnimationFrame(raf);
+  !(function () {
+    setTimeout(() => {
+      const blocks = document.querySelectorAll('.js-scroll');
 
+      [].forEach.call(blocks, (item) => {
+        function onScrollSlider() {
+          if (
+            item.getBoundingClientRect().top - window.innerHeight <=
+            (item.offsetHeight * -1) / 4 &&
+            !item.classList.contains('in-view')
+          ) {
+            item.classList.remove('js-scroll');
+            item.classList.add('in-view');
+          }
+        }
+        onScrollSlider();
+        document.addEventListener('scroll', onScrollSlider);
+      });
+    }, 700);
+  })();
 
-
-  //   const header = document.querySelector('.header');
-  //   const mainWrapper = document.querySelector('.main-wrap');
-
-  //   const setWrapperPadding = () => {
-  //     let headerHeight = header.offsetHeight; // Assuming header is a valid element
-  //     mainWrapper.style.paddingTop = headerHeight + 'px';
-  //   };
-
-  //   setWrapperPadding();
-
-
-  //   let string = document.querySelectorAll('.wpml-ls-native');
-  //   if (string) {
-  //     string.forEach((str) => {
-  //       let length = 2;
-  //       let trimmedString = str.textContent.substring(0, length);
-  //       str.innerHTML = trimmedString;
-  //     })
-  //   }
-
-
-
-  //   $(".js-link_more").click(function () {
-  //     $(this).prev('.read-more-content').slideToggle();
-  //     $(this).toggleClass("open");
-  //     if ($(this).hasClass("open")) {
-  //       $(this).html("Згорнути");
-  //     } else {
-  //       $(this).html("Читати далі");
-  //     }
-  //   });
-
-  //   const createCustomCheckbox = () => {
-  //     let checkbox = $('<span>').addClass('checkbox');
-  //     let wrapper = $('.form__footer .wpcf7-list-item-label');
-  //     checkbox.insertBefore(wrapper);
-  //   }
-
-  //   createCustomCheckbox();
-
-  //   // open/close form popup
-  //   $('.js-open-popup').click(function (e) {
-  //     e.preventDefault();
-  //     let activeLink = $(this).attr('data-href');
-  //     $('.overlay').fadeIn();
-  //     $('#' + activeLink).fadeIn();
-  //     $('body').addClass('noscroll');
-  //   });
-
-  //   $('.js-close').click(function (e) {
-  //     e.preventDefault();
-  //     $('.overlay').fadeOut();
-  //     $('.js-form-popup').fadeOut();
-  //     $('.js-popup-success').fadeOut();
-  //     $('.popup').fadeOut();
-  //     $('body').removeClass('noscroll');
-  //   });
-
-
-  //   // $('.js-open-checked-popup').click(function (e) {
-  //   //   e.preventDefault();
-  //   //   let activeLink = $(this).attr('data-href');
-  //   //   var targetValue = $(this).data('val');
-  //   //   $('.overlay').fadeIn();
-  //   //   $('#' + activeLink).fadeIn();
-  //   //   $('body').addClass('noscroll');
-  //   //   $('.partners-card__header input[type="radio"]').each(function () {
-  //   //     if ($(this).val() === targetValue) {
-  //   //       $(this).prop('checked', !$(this).prop('checked'));
-  //   //     }
-  //   //   });
-
-  //   // });
-
-  //   const checkValidation = function () {
-  //     let notValid = $('.wpcf7-not-valid');
-  //     if (notValid.length > 0 && 'input[type="checkbox"]:not(:checked)') {
-  //       $('input[type="submit"]').addClass('disabled');
-  //     } else {
-  //       $('input[type="submit"]').removeClass('disabled');
-  //     }
-  //   }
-
-  //   $(".wpcf7-form-control").on("blur", function () {
-  //     checkValidation();
-  //   });
-
-  //   const showSuccessPopup = () => {
-  //     $('.js-popup-success').fadeIn();
-  //     $('.js-form-popup').fadeOut();
-  //   }
-
-  //   $('input[type="checkbox"]').on("change", function () {
-  //     setTimeout(() => {
-  //       checkValidation();
-  //     }, 10);
-  //   });
-
-  //   const formPopup = document.querySelector('.popup form');
-  //   formPopup.addEventListener(
-  //     'wpcf7mailsent',
-  //     function (event) {
-  //       showSuccessPopup();
-  //     },
-  //     false
-  //   );
-  // });
-
-  // $(window).load(function () {
-  //   $(".js-phone").inputmask("+380 ## ### ## ##", { "placeholder": "0", 'clearMaskOnLostFocus': false });
 });
+
+
+
+console.clear();
+
+const follower = document.querySelector(".js-follower");
+if (follower) {
+  gsap.set(follower, {
+    opacity: 1,
+    scale: 0,
+    transformOrigin: "center center",
+    xPercent: -50,
+    yPercent: -50
+  });
+  const xTo = gsap.quickTo(follower, "x", { ease: "power3" });
+  const yTo = gsap.quickTo(follower, "y", { ease: "power3" });
+
+  const box = document.querySelector(".video");
+  // const boxPosition = box.getBoundingClientRect().x;
+  const boxLeft = box.getBoundingClientRect().x;
+  const boxTop = box.offsetTop;
+
+  box.addEventListener("mousemove", (e) => {
+    console.log(e.pageY, e.clientY, boxTop);
+    xTo(e.clientX - boxLeft);
+    yTo(e.pageY - boxTop);
+  });
+
+  box.addEventListener("mouseenter", () => {
+    gsap.to(follower, {
+      duration: 0.3,
+      opacity: 1,
+      scale: 1,
+      transformOrigin: "center center"
+    });
+  });
+
+  box.addEventListener("mouseleave", () => {
+    gsap.to(follower, {
+      duration: 0.3,
+      opacity: 0,
+      scale: 0,
+      transformOrigin: "center center"
+    });
+  });
+}
+

@@ -15,6 +15,15 @@
 
 <body>
 	<div <?php body_class(); ?>>
+		<div class="preloader js-preloader js-scroll in-view-detect">
+			<?php
+			$image = get_field('main_logo', 'options');
+			if (!empty($image)) : ?>
+				<a href=" <?php echo get_site_url(null, '/') ?>" class="logo">
+					<?php echo file_get_contents($image['url']); ?>
+				</a>
+			<?php endif; ?>
+		</div>
 		<div class="wrapper">
 			<header class="header js-header">
 				<?php
@@ -89,4 +98,4 @@
 				</div>
 			<?php
 			endif; ?>
-			<main class='main-wrapper js-wrapper'>
+			<main class='main-wrapper js-wrapper transition-fade' id="swup">

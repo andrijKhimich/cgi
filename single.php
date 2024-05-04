@@ -1,7 +1,6 @@
 <?php get_header();
 $banner = get_field('case-poster_image') ?>
 
-
 <section class="section single-banner" style="background-image: url('<?php echo esc_html($banner['url'])  ?>');">
   <div class="container">
     <?php
@@ -18,8 +17,13 @@ $banner = get_field('case-poster_image') ?>
   </div>
 </section>
 
-<section class="section ">
-
+<section class="section single-video">
+  <div class="video">
+    <div class="video-btn js-follower"></div>
+    <!-- <div class="video-item video-toggle follow-wrap">
+      <iframe data-src="https://vimeo.com/641867798" frameborder="0" webkitallowfullscreen mozallowfullscreen data-ready="true" allow="autoplay; encrypted-media" id="vimeo-player"></iframe>
+    </div> -->
+  </div>
 </section>
 
 

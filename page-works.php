@@ -3,7 +3,7 @@
  * Template name: Works page
 */
 get_header(); ?>
-<section class="section works-hero">
+<section class="section works-hero js-scroll slide-bottom in-view-detect">
   <div class="works-hero__row">
     <div class="works-hero__col">
       <div class="works-hero__title">
@@ -37,7 +37,7 @@ get_header(); ?>
   $current_category_id = get_queried_object_id();
   if ($terms) :
     foreach ($terms as $term) : ?>
-      <div class="case-category">
+      <div class="case-category js-scroll slide-top in-view-detect">
         <a href="<?php echo esc_url(get_term_link($term)); ?>" class="case-category__title title-4">
           <svg width="42" height="32" viewBox="0 0 42 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.999999 15.4407L37.8706 15.4407L24.5759 2.14604L25.514 1.20798L40.41 16.104L25.514 31L24.5759 30.0619L37.8706 16.7673L0.999999 16.7673L0.999999 15.4407Z" />

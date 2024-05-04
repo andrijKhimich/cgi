@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer js-scroll slide-top in-view-detect">
   <div class="container">
     <div class="footer-top">
       <div class="footer-top__row">
