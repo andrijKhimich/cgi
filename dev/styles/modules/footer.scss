@@ -22,8 +22,10 @@
     &__col {
       padding: 0 15px;
       flex: 0 0 100%;
+      max-width: 100%;
       @include minw($sm-tablet) {
         flex: 0 0 50%;
+        max-width: 50%;
       }
     }
     &__nav {
@@ -52,9 +54,11 @@
   }
   &-box {
     flex: 0 0 50%;
+    max-width: 0 0 50%;
     margin-bottom: 32px;
     @include minw($sm-tablet) {
       flex: 0 0 auto;
+      max-width: initial;
     }
   }
   &-menu {

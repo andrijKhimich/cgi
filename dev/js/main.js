@@ -166,3 +166,35 @@ if (follower) {
   });
 }
 
+
+$(document).ready(function () {
+  $(function () {
+    $('.video-item').magnificPopup({
+      // 
+      type: 'iframe',
+      mainClass: 'mfp-with-zoom mfp-img-mobile',
+      disableOn: 700,
+      iframe: {
+        markup: '<div class="mfp-iframe-scaler">' +
+          '<div class="mfp-close"></div>' +
+          '<iframe class="mfp-iframe tet" frameborder="0" title="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' +
+          '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+      }
+    });
+  });
+
+
+  $(document).ready(function () {
+    // $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    //   disableOn: 700,
+    //   type: 'iframe',
+    //   mainClass: 'mfp-fade',
+    //   removalDelay: 160,
+    //   preloader: false,
+
+    //   fixedContentPos: false
+    // });
+  });
+
+});
+

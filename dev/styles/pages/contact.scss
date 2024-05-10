@@ -35,9 +35,11 @@
     &__col {
       padding: 0 15px;
       flex: 0 0 100%;
+      max-width: 100%;
       &:last-child {
         @include minw($tablet) {
           flex: 0 0 67%;
+          max-width: 67%;
         }
       }
     }
@@ -99,6 +101,7 @@
     }
     @include minw($sm-tablet) {
       flex: 0 0 33.333%;
+      max-width: 33.333%;
       border-top: 1px solid $black;
       border-bottom: 1px solid $black;
     }

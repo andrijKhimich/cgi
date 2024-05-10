@@ -57,6 +57,7 @@
   }
   &__list {
     // font-weight: 600;
+    font-weight: 500;
     font-size: 28px;
     @include minw($mob) {
       font-size: 32px;
