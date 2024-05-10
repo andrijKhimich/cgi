@@ -14,7 +14,8 @@
   .header-social {
     border-color: $white;
     &::before {
-      display: none;
+      background-color: $white;
+      height: 100px;
     }
   }
   .header-social__list {
@@ -22,6 +23,16 @@
   }
   .header-social__link {
     fill: $white;
+  }
+  .header-social__subnav {
+    color: $white;
+    li {
+      a {
+        &::before {
+          background-color: $white;
+        }
+      }
+    }
   }
   &-banner {
     padding: 28% 0 12%;
@@ -79,6 +90,13 @@
       top: 3px;
       left: 2px;
     }
+  }
+  &-video {
+    z-index: 100;
+  }
+  &-gallery {
+    z-index: 100;
+    cursor: grab;
   }
 }
 

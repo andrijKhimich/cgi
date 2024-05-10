@@ -73,11 +73,15 @@
 				<?php
 				endif; ?>
 			</header>
-			<?php
-			$social = get_field('social_list', 'options');
-			if ($social) : ?>
-				<div class="header-social js-header-socials">
-					<?php
+
+			<div class="header-social js-header-socials">
+				<?php wp_nav_menu(array(
+					'theme_location' => 'Header menu',
+					'container' => null,
+					'menu_class' => 'header-social__subnav',
+				));
+				$social = get_field('social_list', 'options');
+				if ($social) :
 					if ($social['social']) : ?>
 						<ul class="header-social__list">
 							<?php
@@ -95,7 +99,8 @@
 							<?php } ?>
 						</ul>
 					<?php endif; ?>
-				</div>
-			<?php
-			endif; ?>
+				<?php
+				endif; ?>
+			</div>
+
 			<main class='main-wrapper js-wrapper'>

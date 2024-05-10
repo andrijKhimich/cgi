@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       drag: 'free',
       perPage: 5,
       pagination: false,
-      arrows: true,
+      arrows: false,
       autoWidth: false,
       speed: 5000,
       easing: 'linear',

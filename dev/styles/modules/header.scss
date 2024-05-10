@@ -31,6 +31,12 @@
     width: calc(20vw + 60px);
     left: -20vw;
     padding: 140px 60px 40px 27px;
+    &:hover {
+      background-color: $black;
+      .logo svg {
+        fill: $white;
+      }
+    }
   }
 
   @include minw($pc) {
@@ -162,26 +168,22 @@
     @include minw($tablet) {
       display: block;
       position: absolute;
-      padding-top: 60px;
+      // padding-top: 60px;
       border-bottom: 1px solid $black;
       right: 0;
       left: 0;
     }
     @include minw($pc) {
       right: 6%;
-      padding-top: 60px;
     }
-    @include minw($full-hd) {
-      // right: 12.5%;
-      padding-top: 80px;
-    }
+
     &.active {
       transform: translateX(20vw);
     }
     &::before {
       content: "";
       width: 1px;
-      height: 70vh;
+      height: 100vw;
       position: absolute;
       background-color: $black;
       right: 0;
@@ -217,6 +219,44 @@
         width: 20px;
         @include minw($full-hd) {
           width: 25px;
+        }
+      }
+    }
+    &__subnav {
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 14px;
+      margin-right: 32px;
+      padding: 20px 0;
+      font-weight: 500;
+      display: none;
+      @include minw($tablet) {
+        display: flex;
+      }
+      @include minw($full-hd) {
+        font-size: 16px;
+      }
+      li {
+        &:not(:last-child) {
+          margin-right: 43px;
+        }
+      }
+      a {
+        position: relative;
+        &::before {
+          content: "";
+          height: 1px;
+          background-color: $black;
+          width: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: width $hover;
+        }
+        &:hover {
+          &::before {
+            width: 100%;
+          }
         }
       }
     }
