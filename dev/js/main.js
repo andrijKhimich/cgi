@@ -118,83 +118,122 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 700);
   })();
 
+  const gallery = document.querySelector('.gallery');
+  if (gallery) {
+    const splide = new Splide('.gallery', {
+      type: 'loop',
+      drag: 'free',
+      perPage: 5,
+      pagination: false,
+      arrows: true,
+      autoWidth: false,
+      speed: 5000,
+      easing: 'linear',
+      breakpoints: {
+        968: {
+          perPage: 3,
+        },
+        600: {
+          perPage: 2,
+        },
+      },
+    });
+
+    splide.mount();
+  }
 });
 
-
-
-console.clear();
-
 const follower = document.querySelector(".js-follower");
-if (follower) {
-  gsap.set(follower, {
-    opacity: 1,
-    scale: 0,
-    transformOrigin: "center center",
-    xPercent: -50,
-    yPercent: -50
-  });
-  const xTo = gsap.quickTo(follower, "x", { ease: "power3" });
-  const yTo = gsap.quickTo(follower, "y", { ease: "power3" });
+const container = document.querySelector(".video");
 
-  const box = document.querySelector(".video");
-  // const boxPosition = box.getBoundingClientRect().x;
-  const boxLeft = box.getBoundingClientRect().x;
-  const boxTop = box.offsetTop;
-
-  box.addEventListener("mousemove", (e) => {
-    console.log(e.pageY, e.clientY, boxTop);
-    xTo(e.clientX - boxLeft);
-    yTo(e.pageY - boxTop);
-  });
-
-  box.addEventListener("mouseenter", () => {
-    gsap.to(follower, {
-      duration: 0.3,
-      opacity: 1,
-      scale: 1,
-      transformOrigin: "center center"
+if (follower && container) {
+  container.addEventListener("mouseenter", (e) => {
+    gsap.set(follower, {
+      duration: 0.8,
+      opacity: 0, // Initially hide the follower
+      scale: 0,
+      transformOrigin: "center center",
+      xPercent: -50,
+      yPercent: -50,
+      ease: "power3"
     });
   });
 
-  box.addEventListener("mouseleave", () => {
+  container.addEventListener("mousemove", (e) => {
+    const containerRect = container.getBoundingClientRect();
+    const mouseX = e.clientX - containerRect.left; // Calculate relative x position within container
+    const mouseY = e.clientY - containerRect.top; // Calculate relative y position within container
+
     gsap.to(follower, {
-      duration: 0.3,
+      duration: 0.8,
+      x: mouseX,
+      y: mouseY,
+      opacity: 1, // Make the follower visible
+      scale: 1,
+      transformOrigin: "center center",
+      ease: "power3"
+    });
+  });
+
+  container.addEventListener("mouseleave", () => {
+    gsap.to(follower, {
+      duration: 0.8,
       opacity: 0,
       scale: 0,
-      transformOrigin: "center center"
+      ease: "power3"
     });
   });
 }
 
 
 $(document).ready(function () {
-  $(function () {
+  if ($('.video-item').length) {
     $('.video-item').magnificPopup({
-      // 
       type: 'iframe',
       mainClass: 'mfp-with-zoom mfp-img-mobile',
-      disableOn: 700,
       iframe: {
         markup: '<div class="mfp-iframe-scaler">' +
           '<div class="mfp-close"></div>' +
-          '<iframe class="mfp-iframe tet" frameborder="0" title="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' +
-          '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+          '<iframe class="mfp-iframe tet" frameborder="0" webkitallowfullscreen mozallowfullscreen data-ready="true" allow="autoplay; encrypted-media" id="vimeo-player"></iframe>' +
+          '</div>',
+      },
+      callbacks: {
+        open: function () {
+          const preUrlPath = `https://player.vimeo.com/video/`;
+          const urlPath = `?title=0&byline=0&portrait=0&transparent=1&controls=0&loop=1&responsive=1&autoplay=1`;
+          var iframe = this.content.find('iframe');
+          var link = $('.video-item');
+          console.log(link);
+
+          let src = !!link ? link.attr('href') : '';
+          let videoUrlArray = src.split('/');
+
+          let videoId = videoUrlArray.length ? videoUrlArray[3] : '';
+          console.log(preUrlPath.trim() + videoId.trim() + urlPath.trim());
+
+          iframe.attr('src', preUrlPath.trim() + videoId.trim() + urlPath.trim());
+        }
       }
     });
-  });
-
-
-  $(document).ready(function () {
-    // $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    //   disableOn: 700,
-    //   type: 'iframe',
-    //   mainClass: 'mfp-fade',
-    //   removalDelay: 160,
-    //   preloader: false,
-
-    //   fixedContentPos: false
-    // });
-  });
+    $('.gallery__list').each(function () {
+      $(this).magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        mainClass: 'mfp-fade',
+        removalDelay: 1000,
+        gallery: {
+          enabled: true
+        },
+        callbacks: {
+          change: function () {
+            if (this.isOpen) {
+              this.wrap.addClass('mfp-open');
+            }
+          }
+        }
+      });
+    });
+  }
 
 });
 

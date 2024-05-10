@@ -98,4 +98,4 @@
 				</div>
 			<?php
 			endif; ?>
-			<main class='main-wrapper js-wrapper transition-fade' id="swup">
+			<main class='main-wrapper js-wrapper'>

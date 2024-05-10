@@ -197,7 +197,13 @@
         margin-bottom: 54px;
       }
     }
-
+    &:hover {
+      color: $primary;
+      svg {
+        fill: $primary;
+        transform: translate(10px, 0);
+      }
+    }
     &__title {
       font-weight: 500;
       position: relative;
@@ -205,6 +211,7 @@
       align-items: center;
       justify-content: flex-start;
       margin-bottom: 16px;
+      transition: color $hover;
       @include minw($tablet) {
         margin-bottom: 22px;
       }
@@ -213,6 +220,11 @@
         width: 23px;
         height: 18px;
         margin-right: 40px;
+        position: relative;
+        transform: translate(0, 0);
+        transition:
+          transform $hover,
+          fill $hover;
         @include minw($tablet) {
           margin-right: 60px;
           height: 30px;

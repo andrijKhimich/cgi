@@ -1,0 +1,22 @@
+@import "../core.scss";
+@import "../core.scss";
+
+.error-wrapper {
+  position: relative;
+  padding: 50px 0;
+  h2 {
+    text-align: right;
+  }
+  img {
+    max-width: 900px;
+    margin: 50px auto;
+    @include minw($tablet) {
+      margin: 100px auto;
+    }
+  }
+  .work-card__title {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
