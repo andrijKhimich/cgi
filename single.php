@@ -25,6 +25,7 @@ $banner = get_field('case-poster_image') ?>
       <?php endif; ?>
     </a>
     <div class="video-btn js-follower"></div>
+    <div class="video-btn_mob"></div>
   </div>
 </section>
 <?php

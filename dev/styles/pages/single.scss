@@ -111,7 +111,6 @@
     height: 100%;
     position: relative;
     cursor: none;
-
     &::before {
       content: "";
       width: 100%;
@@ -133,18 +132,21 @@
   }
 
   &-btn {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    width: 180px;
-    height: 180px;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0;
-    z-index: 10;
-    transition: opacity 0.3s ease-out;
+    display: none;
 
+    @include minw($tablet) {
+      display: block;
+      position: absolute;
+      background-color: $white;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      opacity: 0;
+      z-index: 10;
+      transition: opacity 0.3s ease-out;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -157,6 +159,32 @@
       background-size: contain;
       background-position: center;
       background-image: url(../images/play.svg);
+    }
+    &_mob {
+      width: 100px;
+      height: 100px;
+      background-color: $white;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      @include minw($tablet) {
+        display: none;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url(../images/play.svg);
+      }
     }
   }
 }

@@ -98,7 +98,7 @@ h1 {
 		font-size: 80px;
 	}
 	@include minw($pc) {
-		// font-size: 90px;
+		font-size: 100px;
 	}
 	@include minw($full-hd) {
 		font-size: 120px;

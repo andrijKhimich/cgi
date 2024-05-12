@@ -4,6 +4,7 @@
   &-block {
     position: relative;
     display: flex;
+    padding-bottom: 20px;
   }
   &-label {
   }
@@ -29,6 +30,7 @@
     border: none;
     border-radius: 0;
     border-left: 1px solid $black;
+    color: $black;
     background-color: $white;
     text-transform: uppercase;
     font-size: 16px;
@@ -46,4 +48,22 @@
       text-align: center;
     }
   }
+}
+
+.screen-reader-response {
+  display: none;
+}
+
+.wpcf7-response-output {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.wpcf7-not-valid-tip {
+  color: tomato;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
 }

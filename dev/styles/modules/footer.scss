@@ -96,6 +96,8 @@
     }
     form {
       width: 100%;
+      position: relative;
+      padding-bottom: 20px;
     }
     &__title {
       text-transform: capitalize;
