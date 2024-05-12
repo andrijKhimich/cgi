@@ -91,6 +91,7 @@
   &-form {
     max-width: 460px;
     margin-bottom: 32px;
+    position: relative;
     @include minw($sm-tablet) {
       margin-bottom: 0;
     }

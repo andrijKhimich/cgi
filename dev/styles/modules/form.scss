@@ -51,7 +51,7 @@
 }
 
 .screen-reader-response {
-  display: none;
+  // display: none;
 }
 
 .wpcf7-response-output {
@@ -59,6 +59,13 @@
   bottom: 0;
   left: 0;
   display: none;
+}
+.screen-reader-response {
+  color: lightgoldenrodyellow;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  font-size: 12px;
 }
 .wpcf7-not-valid-tip {
   color: tomato;
