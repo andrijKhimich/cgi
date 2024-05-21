@@ -180,15 +180,15 @@
     &.active {
       transform: translateX(20vw);
     }
-    &::before {
-      content: "";
-      width: 1px;
-      height: 100vw;
-      position: absolute;
-      background-color: $black;
-      right: 0;
-      top: 0;
-    }
+    // &::before {
+    //   content: "";
+    //   width: 1px;
+    //   height: 100vw;
+    //   position: absolute;
+    //   background-color: $black;
+    //   right: 0;
+    //   top: 0;
+    // }
     &__list {
       display: flex;
       flex-direction: column;

@@ -529,6 +529,18 @@ svg {
 .page {
 	overflow: hidden;
 	width: 100%;
+	position: relative;
+	&::before {
+		@include minw($pc) {
+			content: "";
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			background-color: $black;
+			right: 6%;
+		}
+	}
 }
 
 .word {
