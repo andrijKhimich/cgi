@@ -526,7 +526,8 @@ svg {
 	transition: fill $hover;
 }
 
-.page {
+.page,
+.archive {
 	overflow: hidden;
 	width: 100%;
 	position: relative;
