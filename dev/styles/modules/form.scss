@@ -41,6 +41,15 @@
     font-weight: 500;
     height: 44px;
     line-height: 44px;
+    position: relative;
+    transform: scale(1);
+    transition:
+      color $hover,
+      background-color $hover;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
     @include minw($pc) {
       height: 55px;
       line-height: 55px;
@@ -48,10 +57,6 @@
       text-align: center;
     }
   }
-}
-
-.screen-reader-response {
-  // display: none;
 }
 
 .wpcf7-response-output {
