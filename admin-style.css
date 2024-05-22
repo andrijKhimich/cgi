@@ -1,9 +1,11 @@
 span.orange {
   color: #DA7B33;
 }
-span.decor{
+
+span.decor {
   position: relative;
 }
+
 span.decor:before {
   content: "";
   width: 100%;
@@ -15,6 +17,7 @@ span.decor:before {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .hidden {
   display: none;
 }
