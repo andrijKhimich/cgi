@@ -4,8 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="description" content="Rech website.">
 	<meta name="theme-color" content="#0B0B0B">
 	<meta name="msapplication-TileColor" content="#0B0B0B">
 	<meta name="msapplication-navbutton-color" content="#0B0B0B">
@@ -19,7 +20,7 @@
 			<?php
 			$image = get_field('main_logo', 'options');
 			if (!empty($image)) : ?>
-				<a href=" <?php echo get_site_url(null, '/') ?>" class="logo">
+				<a href=" <?php echo get_site_url(null, '/') ?>" class="logo" aria-label="Rech">
 					<?php echo file_get_contents($image['url']); ?>
 				</a>
 			<?php endif; ?>
@@ -29,12 +30,12 @@
 				<?php
 				$image = get_field('main_logo', 'options');
 				if (!empty($image)) : ?>
-					<a href=" <?php echo get_site_url(null, '/') ?>" class="logo">
+					<a href=" <?php echo get_site_url(null, '/') ?>" class="logo" aria-label="Rech">
 						<?php echo file_get_contents($image['url']); ?>
 					</a>
 				<?php endif; ?>
 				<div class="header__col js-header_col">
-					<button class="header__arrow js-arrow">
+					<button class="header__arrow js-arrow" aria-label="header arrow">
 						<svg width="20" height="40" viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M0.615234 38.9891L18.377 19.7834L0.615234 1.0108" stroke="#DA7B33" stroke-width="1.44404" />
 						</svg>
@@ -88,7 +89,7 @@
 							$social_items = $social['social'];
 							foreach ($social_items as $item) { ?>
 								<li class="header-social__item">
-									<a href="<?php echo esc_html($item['social_link']) ?>" class="header-social__link" target="_blank">
+									<a href="<?php echo esc_html($item['social_link']) ?>" class="header-social__link" aria-label="social" viewport target="_blank">
 										<?php
 										$image = $item['social_icon'];
 										if (!empty($image)) : ?>
