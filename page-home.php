@@ -124,11 +124,11 @@ get_header(); ?>
 <section class="section vision js-scroll slide-top in-view-detect">
   <div class="vision__row">
     <div class="vision__col">
-      <div class="vision__sidebar">
+      <div class="vision__sidebar" data-parallax>
         <?php
         $image = get_field('vision_image');
         if (!empty($image)) : ?>
-          <img data-parallax src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
         <?php endif; ?>
         <div class="vision__title">
           <p><?php the_field('vision_title'); ?>

@@ -50,24 +50,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  let time = document.querySelector('.contact-card__time');
-  if (time) {
+  const timeElement = document.querySelector('.contact-card__time');
+  if (timeElement) {
     function updateClock(timezone, elementId) {
-      var currentTime = new Date().toLocaleTimeString('en-US', { timeZone: timezone });
-      document.getElementById(elementId).textContent = currentTime;
+      const currentTime = new Date().toLocaleTimeString('en-US', { timeZone: timezone });
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.textContent = currentTime;
+      }
     }
 
     // Update the clocks every second
-    setInterval(function () {
+    setInterval(() => {
       updateClock('Europe/London', 'london');
       updateClock('America/Los_Angeles', 'portland');
-      updateClock('America/Toronto', 'toronto');
+      updateClock('Asia/Kolkata', 'mumbai');
     }, 1000);
 
     // Initial update
     updateClock('Europe/London', 'london');
     updateClock('America/Los_Angeles', 'portland');
-    updateClock('America/Toronto', 'toronto');
+    updateClock('Asia/Kolkata', 'mumbai');
   }
 
   const parallax = new Ukiyo('[data-parallax]', {

@@ -100,12 +100,16 @@
       position: relative;
       padding-bottom: 20px;
     }
+    p {
+      font-size: 18px;
+      color: $primary;
+    }
     &__title {
       text-transform: capitalize;
       line-height: 1.711em;
       font-weight: 400;
       margin-bottom: 16px;
-      font-size: 43px;
+      font-size: 34px;
       @include minw($pc) {
         font-size: 45px;
       }

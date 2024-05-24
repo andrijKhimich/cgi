@@ -286,9 +286,9 @@
             "append": ""
         },
         {
-            "key": "field_661eae98e5533",
-            "label": "Form form shortcode",
-            "name": "footer_form_shortcode",
+            "key": "field_665073955a5bd",
+            "label": "Email",
+            "name": "form_email",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -536,5 +536,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715348104
+    "modified": 1716548587
 }

@@ -5,9 +5,7 @@
         <div class="footer-top__col">
           <p class="footer-form__title"><?php the_field('footer_form_title', 'options') ?></p>
           <div class="footer-form">
-            <?php
-            $submit_form = get_field('footer_form_shortcode', 'options');
-            echo do_shortcode($submit_form); ?>
+            <p><?php the_field('form_email', 'options') ?></p>
           </div>
         </div>
         <div class="footer-top__col">
