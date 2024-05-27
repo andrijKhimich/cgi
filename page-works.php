@@ -49,6 +49,8 @@ get_header(); ?>
           $args = array(
             'post_type' => 'cases',
             'posts_per_page' => 6,
+            'orderby' => 'date',
+            'order' => 'DESC',
             'tax_query' => array(
               array(
                 'taxonomy' => $taxonomy,
@@ -76,7 +78,7 @@ get_header(); ?>
       </div>
   <?php endforeach;
   endif; ?>
-
 </section>
+
 <?php
 get_footer(); ?>

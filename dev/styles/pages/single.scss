@@ -135,6 +135,7 @@
     display: none;
 
     @include minw($tablet) {
+      pointer-events: none;
       display: block;
       position: absolute;
       background-color: $white;

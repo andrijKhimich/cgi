@@ -142,9 +142,12 @@ get_header(); ?>
     <div class="vision__col">
       <div class="vision__content">
         <?php the_field('vision_content'); ?>
-        <div class="vision__footer">
-          <p><?php the_field('vision_footer_text'); ?></p>
-        </div>
+        <?php $vision_text = get_field('vision_footer_text');
+        if ($vision_text) : ?>
+          <div class="vision__footer">
+            <p><?php the_field('vision_footer_text'); ?></p>
+          </div>
+        <?php endif ?>
       </div>
     </div>
   </div>
