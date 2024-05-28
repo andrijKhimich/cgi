@@ -1,4 +1,4 @@
-@import "../core.scss";
+@import '../core.scss';
 .header {
   display: flex;
   justify-content: space-between;
@@ -102,6 +102,7 @@
       width: 80px;
     }
   }
+
   &__arrow {
     border-radius: 0;
     padding: 0;
@@ -168,7 +169,6 @@
     @include minw($tablet) {
       display: block;
       position: absolute;
-      // padding-top: 60px;
       border-bottom: 1px solid $black;
       right: 0;
       left: 0;
@@ -180,15 +180,6 @@
     &.active {
       transform: translateX(20vw);
     }
-    // &::before {
-    //   content: "";
-    //   width: 1px;
-    //   height: 100vw;
-    //   position: absolute;
-    //   background-color: $black;
-    //   right: 0;
-    //   top: 0;
-    // }
     &__list {
       display: flex;
       flex-direction: column;
@@ -244,7 +235,7 @@
       a {
         position: relative;
         &::before {
-          content: "";
+          content: '';
           height: 1px;
           background-color: $black;
           width: 0;
@@ -347,7 +338,7 @@
         line-height: 1.38em;
         position: relative;
         &::before {
-          content: "";
+          content: '';
           height: 1px;
           background-color: $white;
           width: 0;
@@ -370,31 +361,32 @@
   font-size: 14px;
   color: $white;
   transform: translateX(-100%);
-  transition:
-    transform $transition 0.4s,
-    left $transition 0.4s;
-  // display: none;
   position: fixed;
   bottom: 80px;
   left: -10vw;
-  // left: 20px;
+  transition:
+    transform $transition 0.4s,
+    left $transition 0.4s;
 
   @include minw($tablet) {
     display: block;
   }
+
   &.active {
     transform: translateX(0);
     left: 23px;
   }
+
   &__title {
     margin-bottom: 24px;
   }
+
   &-list {
     &__link {
       line-height: 1.35em;
       position: relative;
       &::before {
-        content: "";
+        content: '';
         height: 1px;
         background-color: $white;
         width: 0;

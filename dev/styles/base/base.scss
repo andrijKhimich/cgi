@@ -1,4 +1,4 @@
-@import "../core.scss";
+@import '../core.scss';
 // main project styles + custom normalize
 *,
 *::before,
@@ -140,10 +140,10 @@ h4 {
 .decor {
 	position: relative;
 	&::before {
-		content: "";
+		content: '';
 		width: 110%;
 		height: 110%;
-		background-image: url("../images/hero-lines.svg");
+		background-image: url('../images/hero-lines.svg');
 		background-size: contain;
 		background-repeat: no-repeat;
 		position: absolute;
@@ -261,17 +261,17 @@ select {
 
 // Correct the inability to style clickable types in iOS and Safari.
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
 	-webkit-appearance: button;
 }
 
 // Remove the inner border and padding in Firefox.
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
 }
@@ -308,26 +308,26 @@ label {
 	cursor: pointer;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
 	box-sizing: border-box; // Add the correct box sizing in IE 10.
 	padding: 0; // Remove the padding in IE 10.
 }
 
 // Correct the cursor style of increment and decrement buttons in Chrome.
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
 	height: auto;
 }
 
-[type="search"] {
+[type='search'] {
 	-webkit-appearance: textfield; //  Correct the odd appearance in Chrome and Safari.
 	outline-offset: -2px; // Correct the outline style in Safari.
 }
 
 // Remove the inner padding in Chrome and Safari on macOS.
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
@@ -395,7 +395,7 @@ button {
 }
 
 // hide date navigation in input
-input[type="date"] {
+input[type='date'] {
 	display: block;
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
@@ -418,13 +418,13 @@ input[type="date"] {
 }
 
 // hide arrows in input type number
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
 	-moz-appearance: textfield;
 }
 
@@ -533,7 +533,7 @@ svg {
 	position: relative;
 	&::before {
 		@include minw($pc) {
-			content: "";
+			content: '';
 			width: 1px;
 			height: 100%;
 			position: absolute;
@@ -572,6 +572,7 @@ svg {
 	transform: translate(0, 20px);
 	opacity: 0;
 }
+
 .slide-bottom {
 	transform: translate(0, -20px);
 	opacity: 0;
