@@ -1,4 +1,4 @@
-<footer class="footer js-scroll slide-top in-view-detect">
+<footer class="footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-top__row">
@@ -52,6 +52,13 @@
             </a>
           <?php endif; ?>
           <p>&copy; <?php echo date('Y'); ?> <?php the_field('footer_copyright', 'options') ?></p>
+        </div>
+        <div class="footer__certificate">
+          <?php $logo = get_field('footer_certificate_logo', 'options');
+          if (!empty($logo)) : ?>
+            <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+          <?php endif; ?>
+          <p><?php the_field('footer_certificate_text', 'options') ?></p>
         </div>
         <?php
         $social = get_field('social_list', 'options');
