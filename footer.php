@@ -5,7 +5,7 @@
         <div class="footer-top__col">
           <p class="footer-form__title"><?php the_field('footer_form_title', 'options') ?></p>
           <div class="footer-form">
-            <p><?php the_field('form_email', 'options') ?></p>
+            <a href="mailto:<?php the_field('form_email', 'options') ?>"><?php the_field('form_email', 'options') ?></a>
           </div>
         </div>
         <div class="footer-top__col">

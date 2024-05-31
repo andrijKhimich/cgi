@@ -47,8 +47,8 @@ get_header(); ?>
             $args = array(
               'post_type' => 'cases',
               'posts_per_page' => -1,
-              'orderby' => 'date',
-              'order' => 'DESC',
+              // 'orderby' => 'date',
+              // 'order' => 'DESC',
               'tax_query' => array(
                 array(
                   'taxonomy' => $taxonomy,
