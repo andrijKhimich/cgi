@@ -89,7 +89,7 @@
 							$social_items = $social['social'];
 							foreach ($social_items as $item) { ?>
 								<li class="header-social__item">
-									<a href="<?php echo esc_html($item['social_link']) ?>" class="header-social__link" aria-label="social" viewport target="_blank">
+									<a href="<?php echo esc_html($item['social_link']) ?>" class="header-social__link" aria-label="social" target="_blank">
 										<?php
 										$image = $item['social_icon'];
 										if (!empty($image)) : ?>
