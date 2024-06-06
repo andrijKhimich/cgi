@@ -1,4 +1,4 @@
-@import "../core.scss";
+@import '../core.scss';
 
 .hero {
   padding-top: 110px;
@@ -58,8 +58,6 @@
       flex: 0 0 33.333%;
       max-width: 33.333%;
       @include minw($sm-tablet) {
-        // flex: 0 0 33.333%;
-        // max-width: 33.333%;
         padding: 15px;
       }
       @include minw($tablet) {
@@ -74,7 +72,8 @@
         }
       }
       &:first-child {
-        img {
+        img,
+        picture {
           @include minw($tablet) {
             margin-right: auto;
             margin-left: 0;
@@ -82,14 +81,16 @@
         }
       }
       &:nth-child(2) {
-        img {
+        img,
+        picture {
           @include minw($tablet) {
             margin-left: auto;
             margin-right: 0;
           }
         }
       }
-      img {
+      img,
+      picture {
         max-width: 128px;
         aspect-ratio: 1/1;
       }
@@ -108,14 +109,14 @@
     padding: 64px 0 32px 0;
   }
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 340px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url("../images/ellipse.svg");
+    background-image: url('../images/ellipse.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -162,19 +163,22 @@
         margin-bottom: 32px;
       }
       &:nth-child(3n) {
-        img {
+        img,
+        picture {
           margin-right: 0;
           margin-left: auto;
         }
       }
       &:nth-child(3n + 1) {
-        img {
+        img,
+        picture {
           margin-left: 0;
           margin-right: auto;
         }
       }
 
-      img {
+      img,
+      picture {
         max-width: 128px;
         aspect-ratio: 1/1;
       }
@@ -241,7 +245,8 @@
       position: relative;
       padding-bottom: 40%;
       position: relative;
-      img {
+      img,
+      picture {
         position: absolute;
         object-fit: cover;
         height: 100%;
@@ -474,10 +479,10 @@
     }
     &::before {
       @include minw($sm-tablet) {
-        content: "";
+        content: '';
         width: 125%;
         height: 64px;
-        background-image: url("../images/vision-lines.svg");
+        background-image: url('../images/vision-lines.svg');
         background-size: contain;
         background-repeat: no-repeat;
         position: absolute;

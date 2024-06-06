@@ -1,5 +1,5 @@
-@import "../core.scss";
-@import "../core.scss";
+@import '../core.scss';
+@import '../core.scss';
 
 .error-wrapper {
   position: relative;
@@ -7,7 +7,8 @@
   h2 {
     text-align: right;
   }
-  img {
+  img,
+  picture {
     max-width: 900px;
     margin: 50px auto;
     @include minw($tablet) {
