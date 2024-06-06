@@ -18,7 +18,7 @@ function my_assets()
 		wp_enqueue_script('magnific-popup-js', get_stylesheet_directory_uri() . '/libs/js/magnific-popup.min.js', array('jquery'), true);
 	}
 	if (is_404()) {
-		wp_enqueue_style('404', get_template_directory_uri() . '/build/static/css/pages/page-404.css');
+		wp_enqueue_style('404', get_template_directory_uri() . '/build/css/pages/404.css');
 	}
 }
 add_action('wp_enqueue_scripts', 'my_assets');
