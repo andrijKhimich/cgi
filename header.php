@@ -1,3 +1,13 @@
+<?php
+/**
+ * Main Header file for the Rech theme.
+ *
+ * @category   Components
+ * @package    WordPress
+ * @since      1.0.0
+ */
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> style="margin-top: 0 !important;">
 
@@ -18,22 +28,28 @@
 	<div <?php body_class(); ?>>
 		<div class="preloader js-preloader js-scroll in-view-detect">
 			<?php
-			$image = get_field('main_logo', 'options');
-			if (!empty($image)) : ?>
-				<a href=" <?php echo get_site_url(null, '/') ?>" class="logo" aria-label="Rech">
-					<?php echo file_get_contents($image['url']); ?>
+			$image = get_field( 'main_logo', 'options' );
+			if ( ! empty( $image ) ) {
+				?>
+				<a href=" <?php echo esc_url( get_site_url( null, '/' ) ); ?>" class="logo" aria-label="Rech">
+					<?php echo file_get_contents( $image['url'] ); ?>
 				</a>
-			<?php endif; ?>
+				<?php
+			}
+			?>
 		</div>
 		<div class="wrapper">
 			<header class="header js-header">
 				<?php
-				$image = get_field('main_logo', 'options');
-				if (!empty($image)) : ?>
-					<a href=" <?php echo get_site_url(null, '/') ?>" class="logo" aria-label="Rech">
-						<?php echo file_get_contents($image['url']); ?>
+				$image = get_field( 'main_logo', 'options' );
+				if ( ! empty( $image ) ) {
+					?>
+					<a href=" <?php echo esc_url( get_site_url( null, '/' ) ); ?>" class="logo" aria-label="Rech">
+						<?php echo file_get_contents( $image['url'] ); ?>
 					</a>
-				<?php endif; ?>
+					<?php
+				}
+				?>
 				<div class="header__col js-header_col">
 					<button class="header__arrow js-arrow" aria-label="header arrow">
 						<svg width="20" height="40" viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,63 +61,76 @@
 					</button>
 				</div>
 				<nav class="nav js-header-nav">
-					<?php wp_nav_menu(array(
-						'theme_location' => 'Header menu',
-						'container' => null,
-						'menu_class' => 'nav-list',
-					)) ?>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'Header menu',
+							'container'      => null,
+							'menu_class'     => 'nav-list',
+						)
+					)
+					?>
 				</nav>
 				<?php
-				$social = get_field('follow_list', 'options');
-				if ($social) : ?>
+				$social = get_field( 'follow_list', 'options' );
+				if ( $social ) {
+					?>
 					<div class="follow js-follow">
-						<p class="follow__title"><?php echo $social['socials_follow_title']; ?></p>
+						<p class="follow__title"><?php echo esc_html( $social['socials_follow_title'] ); ?></p>
 						<?php
-						if ($social['socials_follow']) : ?>
+						if ( $social['socials_follow'] ) :
+							?>
 							<ul class="follow-list">
 								<?php
 								$social_items = $social['socials_follow'];
-								foreach ($social_items as $item) { ?>
+								foreach ( $social_items as $item ) {
+									?>
 									<li class="follow-list__item">
-										<a href="<?php echo esc_html($item['socials_follow_link']) ?>" class="follow-list__link" target="_blank">
-											<?php echo $item['socials_follow_name'] ?>
+										<a href="<?php echo esc_html( $item['socials_follow_link'] ); ?>" class="follow-list__link" target="_blank">
+											<?php echo $item['socials_follow_name']; ?>
 										</a>
 									</li>
 								<?php } ?>
 							</ul>
 						<?php endif; ?>
 					</div>
-				<?php
-				endif; ?>
+					<?php
+				}
+				?>
 			</header>
-
 			<div class="header-social js-header-socials">
-				<?php wp_nav_menu(array(
-					'theme_location' => 'Header menu',
-					'container' => null,
-					'menu_class' => 'header-social__subnav',
-				));
-				$social = get_field('social_list', 'options');
-				if ($social) :
-					if ($social['social']) : ?>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'Header menu',
+						'container'      => null,
+						'menu_class'     => 'header-social__subnav',
+					)
+				);
+				$social = get_field( 'social_list', 'options' );
+				if ( $social ) {
+					if ( $social['social'] ) {
+						?>
 						<ul class="header-social__list">
 							<?php
 							$social_items = $social['social'];
-							foreach ($social_items as $item) { ?>
+							foreach ( $social_items as $item ) {
+								?>
 								<li class="header-social__item">
-									<a href="<?php echo esc_html($item['social_link']) ?>" class="header-social__link" aria-label="social" target="_blank">
+									<a href="<?php echo esc_html( $item['social_link'] ); ?>" class="header-social__link" aria-label="social" target="_blank">
 										<?php
 										$image = $item['social_icon'];
-										if (!empty($image)) : ?>
-											<?php echo file_get_contents($image['url']); ?>
-										<?php endif; ?>
+										if ( ! empty( $image ) ) {
+											echo file_get_contents( $image['url'] );
+										}
+										?>
 									</a>
 								</li>
 							<?php } ?>
 						</ul>
-					<?php endif; ?>
-				<?php
-				endif; ?>
+						<?php
+					}
+				}
+				?>
 			</div>
-
 			<main class='main-wrapper js-wrapper'>
