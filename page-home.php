@@ -21,7 +21,6 @@ get_header(); ?>
 	$current_category_id = get_queried_object_id();
 	if ( $terms ) {
 		foreach ( $terms as $term_name ) {
-			
 			?>
 			<a href="<?php echo esc_url( get_term_link( $term_name ) ); ?>" class="work-card">
 				<div class="work-card__title title-2 js-scroll slide-bottom in-view-detect">
