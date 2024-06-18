@@ -92,7 +92,7 @@
     }
   }
   &-video {
-    z-index: 100;
+    z-index: 999;
   }
   &-gallery {
     z-index: 100;
@@ -124,19 +124,49 @@
     picture {
       height: 100%;
       object-fit: cover;
+      max-width: 100%;
     }
     iframe {
-      width: 100%;
+      width: 90%;
       height: 100%;
       opacity: 1;
+      position: absolute;
+      top: 0;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 1s ease;
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background-color: $black;
+    opacity: 0;
+    transition: opacity 1s ease;
 
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+      cursor: initial;
+    }
+  }
   &-btn {
     display: none;
 
     @include minw($tablet) {
-      pointer-events: none;
+      // pointer-events: none;
       display: block;
       position: absolute;
       background-color: $white;
@@ -148,6 +178,10 @@
       opacity: 0;
       z-index: 10;
       transition: opacity 0.3s ease-out;
+      &.hidden {
+        opacity: 0 !important;
+        pointer-events: none;
+      }
     }
     &:before {
       content: '';
@@ -171,8 +205,16 @@
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
+      pointer-events: initial;
+      opacity: 1;
+      transition: opacity 1s ease;
+      // display: none;
       @include minw($tablet) {
         display: none;
+      }
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
       }
       &:before {
         content: '';
@@ -189,6 +231,23 @@
       }
     }
   }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  svg {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+}
+img.mfp-img {
+  max-width: 100%;
 }
 .gallery {
   &__item {
